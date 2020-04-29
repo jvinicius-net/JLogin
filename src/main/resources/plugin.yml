@@ -1,0 +1,10 @@
+name: JLogin
+version: ${project.version}
+main: net.jvinicius.login.v1.principal.jvinicius
+author: JVinicius
+website: http://jvinicius.net
+commands:
+  login:
+  register:
+  changepwd:
+  accountcheck:
