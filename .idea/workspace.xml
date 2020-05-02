@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="" />
+    <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/loginevents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/loginevents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/jvinicius.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/jvinicius.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,8 +37,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -37,6 +53,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1al0EHXv1xcobpbh9fROsWDwRjq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -44,6 +61,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ClientBase" />
@@ -102,7 +120,11 @@
       <workItem from="1587730021340" duration="21000" />
       <workItem from="1587730067241" duration="2179000" />
       <workItem from="1588168769722" duration="1869000" />
-      <workItem from="1588174243275" duration="1152000" />
+      <workItem from="1588174243275" duration="1195000" />
+      <workItem from="1588208084178" duration="1281000" />
+      <workItem from="1588290359812" duration="9677000" />
+      <workItem from="1588337356993" duration="3642000" />
+      <workItem from="1588454863205" duration="2416000" />
     </task>
     <servers />
   </component>
@@ -114,38 +136,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#Project_Structure/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587294815818" />
-    <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587638333894">
+    <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588456532942">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587638333894" />
+    <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456532942" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1587375963551">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587375963551" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1587732603495">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1588456434307">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587732603495" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1587732603494">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1588456434307">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587732603494" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1587732603494">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1588456434307">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587732603494" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1587732603494">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1588456434307">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587732603494" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588174243347">
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588454929070">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588174243347" />
-    <state x="209" y="87" key="new project wizard" timestamp="1587316651080">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588454929070" />
+    <state x="209" y="87" key="new project wizard" timestamp="1588175963567">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="209" y="87" key="new project wizard/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587316651080" />
+    <state x="209" y="87" key="new project wizard/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588175963567" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1587635347545">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -154,5 +176,19 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587637407280" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/menus/CaptchaMenu.java</url>
+          <line>14</line>
+          <properties class="net.jvinicius.login.v1.captcha.menus.CaptchaMenu" method="sendCaptcha">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

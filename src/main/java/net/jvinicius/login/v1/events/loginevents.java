@@ -32,7 +32,6 @@ public class loginevents implements Listener {
 	void andar(PlayerMoveEvent e) {
 		if(jvinicius.auth.contains(e.getPlayer().getName())){
 			e.getPlayer().teleport(e.getPlayer().getLocation());
-
 		}
 
 	}
@@ -40,6 +39,7 @@ public class loginevents implements Listener {
 	@EventHandler
 	void sair(PlayerQuitEvent e) {
 		Functions.updateSair(e.getPlayer());
+		jvinicius.LIST.remove(e.getPlayer());
 		if(jvinicius.player.contains(e.getPlayer().getName())) {
 			jvinicius.player.remove(e.getPlayer().getName());
 		}
@@ -59,6 +59,8 @@ public class loginevents implements Listener {
 			e.getPlayer().kickPlayer("§4UUID Spoof não é permitido neste servidor!");
 		}
 		jvinicius.auth.add(e.getPlayer().getName());
+		jvinicius.LIST.put(e.getPlayer(), 3);
+
 		for(Player p : Bukkit.getOnlinePlayers()) {
 			if(jvinicius.auth.contains(p.getName()) && !jvinicius.player.contains(p.getName())) {
 				if(Functions.verifyRegister(p)) {
@@ -72,7 +74,7 @@ public class loginevents implements Listener {
 				@Override
 				public void run() {
 					if(jvinicius.auth.contains(p.getName())) {
-						p.kickPlayer("§cVocê demorou para se logar!");
+						p.kickPlayer("§cVocê demorou para se logar/registrar!");
 					}else {
 						this.cancel();
 					}

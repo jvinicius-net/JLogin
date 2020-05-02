@@ -1,6 +1,7 @@
 package net.jvinicius.login.v1.sql;
 
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
+import com.google.common.hash.Hashing;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import net.jvinicius.login.v1.principal.jvinicius;
@@ -55,7 +59,8 @@ public class Functions {
 	        } catch (Exception e1) 
 	        {
 	        }
-	        return hashtext;     
+
+	        return hashtext;//Hashing.sha512().hashString(, StandardCharsets.UTF_8).toString();
 	    }
 	  
 		 public static boolean verifyLogin(Player p, String pwd){
@@ -134,103 +139,209 @@ public class Functions {
 					  
 					return false;
 				  }
-		 
-	 
-		 public static Boolean verifyRegister(Player p){
-			   Boolean status = false;
-				    String username = p.getName();
-				    if (!db.checkConnection()) {
-				      db.openConnection();
-				    }
-					try {
-				    Statement s = db.getConnection().createStatement();
-			
-				    ResultSet rs;
-				
-						rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `username`='" + 
-								username + "';");
-				
-				    if (rs.next()) {	    	
-					  	  db.closeConnection();	
-					  	status= true;
-				    }else {
-					  	  db.closeConnection();	
-					  	status = false;
-				    }
 
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
 
-				 
-					  
-					return status;
-				  }
-	 
-	 
-	 public static String getAccounts(String ip){
-		   String accounts = "";
-			    if (!db.checkConnection()) {
-			      db.openConnection();
-			    }
-				try {
-			    Statement s = db.getConnection().createStatement();
-		
-			    ResultSet rs;
-			
-					rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `ipaddr`='" + 
-							ip + "';");
-			
-		   
-			    	while(rs.next()) {
-			    		if(accounts == "") {
-				       		accounts += rs.getString("username");
-			    		}else {
-				       		accounts += ","+rs.getString("username");
+	public static Boolean verifyRegister(Player p){
+		Boolean status = false;
+		String username = p.getName();
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
 
-			    		}
-			    		
-			    	}
-		
+			ResultSet rs;
 
-				} catch (SQLException e) {
-					e.printStackTrace();
+			rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `username`='" +
+					username + "';");
+
+			if (rs.next()) {
+				db.closeConnection();
+				status= true;
+			}else {
+				db.closeConnection();
+				status = false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return status;
+	}
+
+	public static Boolean verifyRegister(OfflinePlayer p){
+		Boolean status = false;
+		String username = p.getName();
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `username`='" +
+					username + "';");
+
+			if (rs.next()) {
+				db.closeConnection();
+				status= true;
+			}else {
+				db.closeConnection();
+				status = false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return status;
+	}
+
+
+	public static String getAccounts(String ip){
+		String accounts = "";
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `ipaddr`='" +
+					ip + "';");
+
+			String playerChecks = "";
+			while(rs.next()) {
+				if(Bukkit.getOfflinePlayer(rs.getString("username").toString()).isBanned()){
+					playerChecks = "&c"+rs.getString("username");
+				}else if(Bukkit.getOfflinePlayer(rs.getString("username").toString()).isOnline()){
+					playerChecks = "&2"+rs.getString("username");
+				}else{
+					playerChecks = "&7"+rs.getString("username");
 				}
 
-			 
-			  	 db.closeConnection();	
 
-				return accounts;
-			  }
-	 public static String getLastSeen(Player p){
-		   String last = "";
-			    if (!db.checkConnection()) {
-			      db.openConnection();
-			    }
-				try {
-			    Statement s = db.getConnection().createStatement();
-		
-			    ResultSet rs;
-			
-					rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `username`='" + 
-							p.getName() + "';");
-			
-			    if (rs.next()) {	   
 
-			    	last = rs.getString("last_seen");
-				  	  db.closeConnection();	
-			    }else {
-				  	  db.closeConnection();	
-			    }
+				if(accounts == "") {
+					accounts += "&r"+playerChecks;
+				}else {
+					accounts += "&7,&r"+playerChecks;
 
-				} catch (SQLException e) {
-					e.printStackTrace();
 				}
 
-			 
-				  
-				return last;
-			  }
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+		db.closeConnection();
+
+		return accounts;
+	}
+
+	public static String getUserIP(String username){
+		String accounts = "";
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `username`='" +
+					username + "';");
+
+			if(rs.next()) {
+
+
+
+
+					accounts = rs.getString("ipaddr");
+
+
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+		db.closeConnection();
+
+		return accounts;
+	}
+	public static String getLastSeen(Player p){
+		String last = "";
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `username`='" +
+					p.getName() + "';");
+
+			if (rs.next()) {
+
+				last = rs.getString("last_seen");
+				db.closeConnection();
+			}else {
+				db.closeConnection();
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return last;
+	}
+
+
+	public static String getLastSeen(OfflinePlayer p){
+		String last = "";
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_users WHERE `username`='" +
+					p.getName() + "';");
+
+			if (rs.next()) {
+
+				last = rs.getString("last_seen");
+				db.closeConnection();
+			}else {
+				db.closeConnection();
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return last;
+	}
 
 
 

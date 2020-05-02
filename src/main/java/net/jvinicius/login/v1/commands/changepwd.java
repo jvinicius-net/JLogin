@@ -12,7 +12,8 @@ public class changepwd implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 	    if (!(sender instanceof Player)) {
-	        return true; 
+			sender.sendMessage("§cApenas players podem executar este comando!");
+			return true;
 	    }
 		Player p = (Player)sender;
 		if(!jvinicius.player.contains(p.getName())) {

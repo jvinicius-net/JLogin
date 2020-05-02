@@ -1,6 +1,7 @@
 package net.jvinicius.login.v1.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,7 +14,8 @@ public class account implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 	    if (!(sender instanceof Player)) {
-	        return true; 
+			sender.sendMessage("§cApenas players podem executar este comando!");
+	        return true;
 	    }
 		
 		
@@ -31,11 +33,7 @@ public class account implements CommandExecutor {
 			return true;
 
 		}
-		Player p2 = Bukkit.getPlayer(args[0]);
-		if(p2 == null) {
-			p.sendMessage("§cEste jogador esta offline!");
-			return true;
-		}
+		OfflinePlayer p2 = Bukkit.getOfflinePlayer(args[0]);
 		if(!Functions.verifyRegister(p2)) {
 			p.sendMessage("§cEste jogador não é registrado!");
 			return true;
@@ -44,13 +42,16 @@ public class account implements CommandExecutor {
 		p.sendMessage("§aInformações da conta: §f"+p2.getName());
 		p.sendMessage("");
 		p.sendMessage("§aUUID: §f"+p2.getUniqueId().toString());
-		p.sendMessage("§aIP: §f"+p2.getAddress().toString());
+		p.sendMessage("§aIP: §f"+Functions.getUserIP(p2.getName()));
 		if(Functions.getLastSeen(p2) != null) {
 			p.sendMessage("§aUltimo login em: §f"+Functions.getLastSeen(p2));
 		}
 		p.sendMessage("");
-			p.sendMessage("§aContas registradas no mesmo endereço de ip:");
-			p.sendMessage(Functions.getAccounts(p2.getAddress().toString()));
+		p.sendMessage("§aContas registradas no mesmo endereço de ip:");
+		p.sendMessage("§7(§2ONLINE§7) §7(§7OFFLINE§7) §7(§cBANIDO§7)");
+		p.sendMessage("");
+
+		p.sendMessage(Functions.getAccounts(Functions.getUserIP(p2.getName())).replace("&","§"));
 			p.sendMessage("");
 
 		

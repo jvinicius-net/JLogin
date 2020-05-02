@@ -16,7 +16,8 @@ public class login implements CommandExecutor {
 	@SuppressWarnings("unused")
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 	    if (!(sender instanceof Player)) {
-	        return true; 
+			sender.sendMessage("§cApenas players podem executar este comando!");
+			return true;
 	    }
 		Player p = (Player)sender;
 		
@@ -29,22 +30,46 @@ public class login implements CommandExecutor {
 		if(jvinicius.auth.contains(p.getName()) && Functions.verifyRegister(p))
 			if(args.length == 0) {
 				p.sendMessage("§cUse /login (senha)");
+				return true;
 			} else if(args.length == 1) {
+				if(!Functions.verifyRegister(p)){
+					p.sendMessage("§cVocê não esta registrado.");
+					return true;
+				}
 				if(Functions.verifyLogin(p, args[0])) {
 
 						jvinicius.auth.remove(p.getName());
 						p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 
 						p.sendMessage("§aLogado com sucesso!");
+
 						if(!jvinicius.player.contains(p.getName())) {
 							jvinicius.player.add(p.getName());
 						}
 
+
+					return false;
+
 				} else {
-					p.sendMessage("§cA senha que você digitou está incorreta!");
+
+					int tentativas = jvinicius.LIST.get(p);
+
+
+					if (tentativas > 0) {
+						p.sendMessage("§cA senha que você digitou está incorreta! Você possui mais " + tentativas + " tentantivas.");
+						int antesD = tentativas;
+						tentativas -= 1;
+						jvinicius.LIST.replace(p,antesD,tentativas);
+						return true;
+					} else {
+						p.kickPlayer("§cVocê excedeu o limite de tentativas de se autenticar.");
+						return true;
+					}
 				}
 			} else if(args.length > 1) {
 				p.sendMessage("§cDigite a senha apenas 1 vez!");
+				return true;
+
 			}
 		return false;
 	}

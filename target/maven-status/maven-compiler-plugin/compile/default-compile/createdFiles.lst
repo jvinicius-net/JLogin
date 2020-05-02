@@ -1,0 +1,12 @@
+net\jvinicius\login\v1\commands\testeCommand.class
+net\jvinicius\login\v1\sql\Functions.class
+net\jvinicius\login\v1\commands\register.class
+net\jvinicius\login\v1\principal\jvinicius.class
+net\jvinicius\login\v1\commands\changepwd.class
+net\jvinicius\login\v1\events\loginevents$1.class
+net\jvinicius\login\v1\commands\account.class
+net\jvinicius\login\v1\sql\SQL.class
+net\jvinicius\login\v1\commands\login.class
+net\jvinicius\login\v1\cfg\MessagesFile.class
+net\jvinicius\login\v1\events\loginevents.class
+net\jvinicius\login\v1\sql\Database.class

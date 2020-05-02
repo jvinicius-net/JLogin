@@ -1,0 +1,7 @@
+config:
+   loginstaff: true
+   captcha: true
+
+
+# Bypass Captcha Permission: jlogin.staff.cbypass
+# Login Staff Permission: jlogin.staff.login
