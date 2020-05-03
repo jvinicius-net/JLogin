@@ -22,7 +22,7 @@ public class LoginStaffConsoleCommand implements CommandExecutor {
                 if(args[0].equalsIgnoreCase("register")){
                     // register USER ID
                     if(args.length < 2){
-                        Bukkit.getConsoleSender().sendMessage("§cUse: /stafflogin register (player/uuid) (Discord-ID)");
+                        Bukkit.getConsoleSender().sendMessage("§cUse: /staffaccount register (player/uuid) (Discord-ID)");
                         return true;
                     }
                     if(Functions.registerPlayerStaff(Bukkit.getOfflinePlayer(args[1]),args[2])){
@@ -34,7 +34,7 @@ public class LoginStaffConsoleCommand implements CommandExecutor {
                     }
                 }else if(args[0].equalsIgnoreCase("unregister")){
                     if(args.length < 1){
-                        Bukkit.getConsoleSender().sendMessage("§cUse: /stafflogin unregister (player/uuid)");
+                        Bukkit.getConsoleSender().sendMessage("§cUse: /staffaccount unregister (player/uuid)");
                         return true;
                     }
                     if(Functions.deletePlayer(Bukkit.getOfflinePlayer(args[1]))){
@@ -46,14 +46,14 @@ public class LoginStaffConsoleCommand implements CommandExecutor {
                     }
 
                 }else{
-                    Bukkit.getConsoleSender().sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
-                    Bukkit.getConsoleSender().sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
+                    Bukkit.getConsoleSender().sendMessage("§a/staffaccount register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+                    Bukkit.getConsoleSender().sendMessage("§a/staffaccount unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
                     return true;
                 }
 
             }else{
-                Bukkit.getConsoleSender().sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
-                Bukkit.getConsoleSender().sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
+                Bukkit.getConsoleSender().sendMessage("§a/staffaccount register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+                Bukkit.getConsoleSender().sendMessage("§a/staffaccount unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
                 return true;
             }
         }else{
@@ -69,7 +69,7 @@ public class LoginStaffConsoleCommand implements CommandExecutor {
 if(args.length > 0){
 if(args[0].equalsIgnoreCase("register")) {
     if (args.length < 2) {
-        p.sendMessage("§cUse: /stafflogin register (player/uuid) (Discord-ID)");
+        p.sendMessage("§cUse: /staffaccount register (player/uuid) (Discord-ID)");
         return true;
     }
 
@@ -85,7 +85,7 @@ if(args[0].equalsIgnoreCase("register")) {
 
 }else if(args[0].equalsIgnoreCase("unregister")){
     if (args.length < 2) {
-        p.sendMessage("§cUse: /stafflogin register (player/uuid) (Discord-ID)");
+        p.sendMessage("§cUse: /staffaccount register (player/uuid) (Discord-ID)");
         return true;
     }
     if(Functions.deletePlayer(Bukkit.getOfflinePlayer(args[1]))){
@@ -96,13 +96,13 @@ if(args[0].equalsIgnoreCase("register")) {
         return true;
     }
 }else{
-    p.sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
-    p.sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
+    p.sendMessage("§a/staffaccount register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+    p.sendMessage("§a/staffaccount unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
     return true;
 }
 }else{
-    p.sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
-    p.sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
+    p.sendMessage("§a/staffaccount register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+    p.sendMessage("§a/staffaccount unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
     return true;
 }
 

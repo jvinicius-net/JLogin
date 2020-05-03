@@ -51,7 +51,25 @@ public class LoginCommand implements CommandExecutor {
 
 
 
-						if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
+					if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
+
+						if(p.hasPermission("jlogin.capcha.bypass")){
+							if (MainClass.plugin.getConfig().getBoolean("stafflogin.active")) {
+
+
+								if (p.hasPermission("jlogin.staff.login")) {
+									LoginStaff.StaffLogin(p);
+								} else {
+									if (!MainClass.player.contains(p.getName())) {
+										MainClass.player.add(p.getName());
+									}
+								}
+							} else {
+								if (!MainClass.player.contains(p.getName())) {
+									MainClass.player.add(p.getName());
+								}
+							}
+						}else{
 							MainClass.captchaPlayers.add(p);
 							if(MainClass.plugin.getConfig().getInt("captcha.type") == 1) {
 								HeadCaptchaType.sendCaptcha(p);
@@ -61,23 +79,25 @@ public class LoginCommand implements CommandExecutor {
 								Bukkit.getLogger().severe("Tipo de captcha não selecionada. Desativando o plugin");
 								MainClass.plugin.getPluginLoader().disablePlugin(MainClass.plugin);
 							}
-						}else{
-							if(MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
+						}
+
+					}else{
+						if(MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
 
 
-								if(p.hasPermission("jlogin.staff.login")){
-									LoginStaff.StaffLogin(p);
-								}else{
-									if(!MainClass.player.contains(p.getName())) {
-										MainClass.player.add(p.getName());
-									}
-								}
+							if(p.hasPermission("jlogin.staff.login")){
+								LoginStaff.StaffLogin(p);
 							}else{
 								if(!MainClass.player.contains(p.getName())) {
 									MainClass.player.add(p.getName());
 								}
 							}
+						}else{
+							if(!MainClass.player.contains(p.getName())) {
+								MainClass.player.add(p.getName());
+							}
 						}
+					}
 
 
 					return false;

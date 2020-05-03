@@ -2,6 +2,7 @@ package net.jvinicius.login.v1.events;
 
 import java.util.UUID;
 
+import net.jvinicius.login.v1.loginstaff.LoginStaff;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

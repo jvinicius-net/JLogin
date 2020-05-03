@@ -137,7 +137,7 @@ public class MainClass extends JavaPlugin {
 		if(getConfig().getBoolean("stafflogin.active")){
 			if(getConfig().getString("stafflogin.discordtoken") != null){
 				getCommand("loginstaff").setExecutor(new LoginStaffCommand());
-				getCommand("stafflogin").setExecutor(new LoginStaffConsoleCommand());
+				getCommand("staffaccount").setExecutor(new LoginStaffConsoleCommand());
 				Bukkit.getPluginManager().registerEvents(new StaffEvent(), this);
 
 

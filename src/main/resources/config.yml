@@ -1,5 +1,5 @@
 captcha:
-  active: false
+  active: true
   type: 2
    #Types: 1 = head, 2 = item
 
@@ -7,7 +7,7 @@ stafflogin:
   active: false
   discordtoken: 'DISCORD BOT TOKEN'
 
-
+# Capcha Bypass Permission: jlogin.capcha.bypass
 # Account Command Permission: jlogin.command.account
 # Login Staff Command Permission: jlogin.staff.login
 # Staff Login Command Permission: jlogin.command.owner

@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/AccountCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/AccountCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/LoginEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/LoginEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +128,7 @@
       <workItem from="1588468608853" duration="4713000" />
       <workItem from="1588473499388" duration="4459000" />
       <workItem from="1588478260462" duration="14017000" />
+      <workItem from="1588515046232" duration="3063000" />
     </task>
     <servers />
   </component>
@@ -164,10 +172,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="60" key="SettingsEditor/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588486830760" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588478259863">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588515049197">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588478259863" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588515049197" />
     <state x="209" y="87" key="new project wizard" timestamp="1588175963567">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -176,10 +184,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587635347545" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1587637407280">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1588515303024">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587637407280" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588515303024" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

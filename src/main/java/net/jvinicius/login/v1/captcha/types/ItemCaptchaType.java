@@ -54,7 +54,7 @@ public final class ItemCaptchaType implements Listener {
         for (int i = 0; i != 9; i++) {
             ItemStack item;
             ItemMeta item2;
-            (item2 = (item = new ItemStack(Material.getMaterial(((Integer)lista.get(i)).intValue()))).getItemMeta()).setDisplayName("§aClique no " + nome);
+            (item2 = (item = new ItemStack(Material.getMaterial(((Integer)lista.get(i)).intValue()))).getItemMeta()).setDisplayName("§aClique no(a) " + nome);
             item.setItemMeta(item2);
             inv.addItem(new ItemStack[] { item });
         }

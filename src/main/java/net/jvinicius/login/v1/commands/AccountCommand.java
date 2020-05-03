@@ -29,7 +29,7 @@ public class AccountCommand implements CommandExecutor {
 			return true;
 		}
 		if(args.length == 0) {
-			p.sendMessage("§cUse: /accountcheck (player)");
+			p.sendMessage("§cUse: /accountcheck (player/uuid)");
 			return true;
 
 		}
