@@ -69,9 +69,10 @@ public class MainClass extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new CaptchaEvents(), this);
 		if(getConfig().getInt("captcha.type") == 1){
 			Bukkit.getPluginManager().registerEvents(new HeadCaptchaType(), this);
+			getLogger().info("O estilo 'Head' do captcha foi carregado com sucesso!");
 		}else if(getConfig().getInt("captcha.type") == 2){
 			Bukkit.getPluginManager().registerEvents(new ItemCaptchaType(), this);
-
+			getLogger().info("O estilo 'Item' do captcha foi carregado com sucesso!");
 		}else{
 			Bukkit.getLogger().severe("Tipo de captcha não selecionada. Desativando o plugin");
 			getPluginLoader().disablePlugin(MainClass.plugin);

@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/CaptchaEvents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/HeadCaptchaType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/ItemCaptchaType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/AccountCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/ChangePwdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/loginevents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/LoginEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/jvinicius.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/SQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +115,7 @@
       <workItem from="1588290359812" duration="9677000" />
       <workItem from="1588337356993" duration="3642000" />
       <workItem from="1588454863205" duration="3138000" />
-      <workItem from="1588468608853" duration="2749000" />
+      <workItem from="1588468608853" duration="3099000" />
     </task>
     <servers />
   </component>
