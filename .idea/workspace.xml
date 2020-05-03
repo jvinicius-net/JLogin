@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/HeadCaptchaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/HeadCaptchaType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/LoginStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/LoginStaff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/events/StaffEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/events/StaffEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +121,7 @@
       <workItem from="1588454863205" duration="3138000" />
       <workItem from="1588468608853" duration="4713000" />
       <workItem from="1588473499388" duration="4459000" />
-      <workItem from="1588478260462" duration="8852000" />
+      <workItem from="1588478260462" duration="9726000" />
     </task>
     <servers />
   </component>
@@ -149,22 +145,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588486822316" />
-    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1588487125281">
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1588487271568">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487125281" />
-    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1588487125281">
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487271568" />
+    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1588487271567">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487125281" />
-    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1588487125281">
+    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487271567" />
+    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1588487271567">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487125281" />
-    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1588487125281">
+    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487271567" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1588487271567">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487125281" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588487271567" />
     <state x="277" y="60" key="SettingsEditor" timestamp="1588486830760">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

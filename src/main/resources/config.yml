@@ -8,5 +8,5 @@ stafflogin:
   discordtoken: 'NTk0MDE5MzA1NTQ1MjY5MjYw.Xq5aFQ.-D7-_T2J-kbsB_BQbZ27uxSVcLo'
 
 
-# Bypass Captcha Permission: jlogin.staff.cbypass
+# Bypass Captcha Permission: jlogin.captcha.bypass
 # Account Command Permission: jlogin.command.account
