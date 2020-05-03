@@ -4,10 +4,11 @@ captcha:
    #Types: 1 = head, 2 = item
 
 stafflogin:
-  active: false
-  discordtoken: 'DISCORD BOT TOKEN'
+  active: true
+  discordtoken: 'NTk0MDE5MzA1NTQ1MjY5MjYw.Xq5aFQ.-D7-_T2J-kbsB_BQbZ27uxSVcLo'
 
 
+# Bypass Captcha Permission: jlogin.captcha.bypass
 # Account Command Permission: jlogin.command.account
 # Login Staff Command Permission: jlogin.staff.login
 # Staff Login Command Permission: jlogin.command.owner

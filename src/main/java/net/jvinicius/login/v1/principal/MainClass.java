@@ -13,6 +13,7 @@ import com.google.common.io.Resources;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.utils.Compression;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
@@ -142,9 +143,12 @@ public class MainClass extends JavaPlugin {
 
 
 				try {
-					jda = new JDABuilder(getConfig().getString("stafflogin.discordtoken")).setActivity(Activity.playing("Protegendo servidores")).setBulkDeleteSplittingEnabled(false).setCompression(Compression.NONE).setDisabledCacheFlags(EnumSet.of(CacheFlag.ACTIVITY, CacheFlag.VOICE_STATE)).disableCache(EnumSet.of(CacheFlag.ACTIVITY, CacheFlag.VOICE_STATE)).build();
+					//jda = new JDABuilder().setBulkDeleteSplittingEnabled(false).setCompression(Compression.NONE).setDisabledCacheFlags(EnumSet.of(CacheFlag.ACTIVITY, CacheFlag.VOICE_STATE)).disableCache(EnumSet.of(CacheFlag.ACTIVITY, CacheFlag.VOICE_STATE)).build();
+					jda = new JDABuilder(AccountType.BOT).setToken(getConfig().getString("stafflogin.discordtoken")).build();
+					jda.getPresence().setStatus(OnlineStatus.ONLINE);
+					jda.getPresence().setActivity(Activity.playing("Protegendo servidores"));
 
-			} catch (LoginException e) {
+				} catch (LoginException e) {
 				e.printStackTrace();
 			}
 			}else{
