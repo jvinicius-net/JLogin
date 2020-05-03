@@ -2,8 +2,9 @@ package net.jvinicius.login.v1.commands;
 
 
 
-import net.jvinicius.login.v1.captcha.HeadCaptchaType;
-import net.jvinicius.login.v1.captcha.ItemCaptchaType;
+import net.jvinicius.login.v1.captcha.types.HeadCaptchaType;
+import net.jvinicius.login.v1.captcha.types.ItemCaptchaType;
+import net.jvinicius.login.v1.loginstaff.LoginStaff;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -45,7 +46,7 @@ public class LoginCommand implements CommandExecutor {
 						p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 
 						p.sendMessage("§aLogado com sucesso!");
-						if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
+					if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
 						if(MainClass.plugin.getConfig().getInt("captcha.type") == 1) {
 							HeadCaptchaType.sendCaptcha(p);
 						}else if(MainClass.plugin.getConfig().getInt("captcha.type") == 2){
@@ -54,11 +55,24 @@ public class LoginCommand implements CommandExecutor {
 							Bukkit.getLogger().severe("Tipo de captcha não selecionada. Desativando o plugin");
 							MainClass.plugin.getPluginLoader().disablePlugin(MainClass.plugin);
 						}
+					}else{
+						if(MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
+
+
+							if(p.hasPermission("jlogin.staff.login")){
+								LoginStaff.StaffLogin(p);
+							}else{
+								if(!MainClass.player.contains(p.getName())) {
+									MainClass.player.add(p.getName());
+								}
+							}
+						}else{
+							if(!MainClass.player.contains(p.getName())) {
+								MainClass.player.add(p.getName());
+							}
+						}
 						}
 
-						if(!MainClass.player.contains(p.getName())) {
-							MainClass.player.add(p.getName());
-						}
 
 
 					return false;

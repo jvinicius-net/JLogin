@@ -35,7 +35,7 @@ public class LoginEvent implements Listener {
 		}
 
 	}
-	
+
 	@EventHandler
 	void sair(PlayerQuitEvent e) {
 		Functions.updateSair(e.getPlayer());
@@ -70,7 +70,7 @@ public class LoginEvent implements Listener {
 				}
 			}
 			new BukkitRunnable() {
-				
+
 				@Override
 				public void run() {
 					if(MainClass.auth.contains(p.getName())) {
@@ -78,7 +78,7 @@ public class LoginEvent implements Listener {
 					}else {
 						this.cancel();
 					}
-					
+
 				}
 			}.runTaskLater(MainClass.instance, 20*15);
 		}
@@ -97,9 +97,9 @@ public class LoginEvent implements Listener {
 			}
 			e.setCancelled(true);
 		}
-		
+
 	}
-	
+
 	@EventHandler(priority = EventPriority.HIGH)
 	void comando(PlayerCommandPreprocessEvent e) {
 		Player p = e.getPlayer();
@@ -109,7 +109,7 @@ public class LoginEvent implements Listener {
 			e.setCancelled(true);
 		}
 	}
-	
+
 	@EventHandler
 	void interagir(PlayerInteractEvent e) {
 
@@ -118,54 +118,54 @@ public class LoginEvent implements Listener {
 		}
 
 	}
-	
+
 	@EventHandler
-	  public void botarBlock(BlockPlaceEvent e)
-	  {
-	    @SuppressWarnings("unused")
+	public void botarBlock(BlockPlaceEvent e)
+	{
+		@SuppressWarnings("unused")
 		Player p = e.getPlayer();
 
-	    if (MainClass.auth.contains(e.getPlayer().getName())) {
-	      e.setCancelled(true);
-	    }
-	  }
-	  
-	  @EventHandler
-	  public void quebrarBloco(BlockBreakEvent e)
-	  {
-	    @SuppressWarnings("unused")
-		Player p = e.getPlayer();
-
-	    if (MainClass.auth.contains(e.getPlayer().getName())) {
-	      e.setCancelled(true);
-	    }
-	  }
-	  
-	  @EventHandler
-	  public void droparItem(PlayerDropItemEvent e)
-	  {
-	    @SuppressWarnings("unused")
-		Player p = e.getPlayer();
-
-	    if (MainClass.auth.contains(e.getPlayer().getName())) {
-	      e.setCancelled(true);
-	    }
-	  }
-	
-
-		@EventHandler
-		public void noDamage (EntityDamageEvent e) {
-			if (e.getEntity() instanceof Player) {
-				Player p = (Player) e.getEntity();
-				if (MainClass.auth.contains(p.getName())) {
-					e.setCancelled(true);
-				}
-
-			}
+		if (MainClass.auth.contains(e.getPlayer().getName())) {
+			e.setCancelled(true);
 		}
-		
-	  
-	  
+	}
+
+	@EventHandler
+	public void quebrarBloco(BlockBreakEvent e)
+	{
+		@SuppressWarnings("unused")
+		Player p = e.getPlayer();
+
+		if (MainClass.auth.contains(e.getPlayer().getName())) {
+			e.setCancelled(true);
+		}
+	}
+
+	@EventHandler
+	public void droparItem(PlayerDropItemEvent e)
+	{
+		@SuppressWarnings("unused")
+		Player p = e.getPlayer();
+
+		if (MainClass.auth.contains(e.getPlayer().getName())) {
+			e.setCancelled(true);
+		}
+	}
+
+
+	@EventHandler
+	public void noDamage (EntityDamageEvent e) {
+		if (e.getEntity() instanceof Player) {
+			Player p = (Player) e.getEntity();
+			if (MainClass.auth.contains(p.getName())) {
+				e.setCancelled(true);
+			}
+
+		}
+	}
+
+
+
 	@EventHandler
 	void chat(PlayerChatEvent e) {
 		if(MainClass.auth.contains(e.getPlayer().getName()))

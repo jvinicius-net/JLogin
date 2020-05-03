@@ -33,6 +33,10 @@ public class Functions {
 			      Statement statement = db.getConnection().createStatement();
 				  statement.executeUpdate("CREATE TABLE IF NOT EXISTS `jvlogin_users` (`username` varchar(32), `password` varchar(32), `ipaddr` varchar(32),`last_seen` varchar(32));");
 
+				  if(MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
+					  statement.executeUpdate("CREATE TABLE IF NOT EXISTS `jvlogin_stafflogin` (`uuid` varchar(32), `discordid` varchar(32));");
+				  }
+
 				  db.closeConnection();
 			      
 				  
@@ -421,5 +425,10 @@ public class Functions {
 		return false;
 
 	}
+
+
+
+
+
 
 }

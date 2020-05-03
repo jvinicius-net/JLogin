@@ -1,8 +1,9 @@
-package net.jvinicius.login.v1.captcha;
+package net.jvinicius.login.v1.captcha.types;
 
 
 import java.util.Random;
 
+import net.jvinicius.login.v1.loginstaff.LoginStaff;
 import net.jvinicius.login.v1.principal.MainClass;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -62,6 +63,22 @@ public final class HeadCaptchaType implements Listener {
                 if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§aClique aqui")) {
                     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
                     p.sendMessage("§aCaptcha verificado com sucesso!");
+                    if (MainClass.plugin.getConfig().getBoolean("stafflogin.active")) {
+
+
+                        if (p.hasPermission("jlogin.staff.login")) {
+                            LoginStaff.StaffLogin(p);
+                        } else {
+                            if (!MainClass.player.contains(p.getName())) {
+                                MainClass.player.add(p.getName());
+                            }
+                        }
+                    } else {
+                        if (!MainClass.player.contains(p.getName())) {
+                            MainClass.player.add(p.getName());
+                        }
+                    }
+
                     MainClass.captchaPlayers.remove(p);
                 }
             }

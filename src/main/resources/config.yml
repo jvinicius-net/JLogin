@@ -3,6 +3,10 @@ captcha:
   type: 2
    #Types: 1 = head, 2 = item
 
+stafflogin:
+  active: true
+  discordtoken: XXXX
+
 
 # Bypass Captcha Permission: jlogin.staff.cbypass
 # Account Command Permission: jlogin.command.account

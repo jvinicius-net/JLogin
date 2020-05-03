@@ -9,9 +9,12 @@ import java.util.HashMap;
 
 
 import com.google.common.io.Resources;
-import net.jvinicius.login.v1.captcha.CaptchaEvents;
-import net.jvinicius.login.v1.captcha.HeadCaptchaType;
-import net.jvinicius.login.v1.captcha.ItemCaptchaType;
+import net.dv8tion.jda.api.AccountType;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+import net.jvinicius.login.v1.captcha.events.CaptchaEvents;
+import net.jvinicius.login.v1.captcha.types.HeadCaptchaType;
+import net.jvinicius.login.v1.captcha.types.ItemCaptchaType;
 import net.jvinicius.login.v1.commands.*;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -23,6 +26,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import net.jvinicius.login.v1.events.LoginEvent;
 import net.jvinicius.login.v1.sql.Functions;
 
+import javax.security.auth.login.LoginException;
 
 
 public class MainClass extends JavaPlugin {
@@ -32,7 +36,7 @@ public class MainClass extends JavaPlugin {
 	public static MainClass instance;
 	public static Plugin plugin;
 	public  static HashMap<Player, Integer> LIST = new HashMap<>();
-
+	public static JDA jda;
 
 
 	@SuppressWarnings("deprecation")
@@ -111,9 +115,25 @@ public class MainClass extends JavaPlugin {
 			Bukkit.getPluginManager().registerEvents(new ItemCaptchaType(), this);
 			getLogger().info("O estilo 'Item' do captcha foi carregado com sucesso!");
 		}else{
-			Bukkit.getLogger().severe("Tipo de captcha não selecionada. Desativando o plugin");
+			Bukkit.getLogger().severe("Tipo de captcha não selecionada, desativando o plugin");
 			getPluginLoader().disablePlugin(MainClass.plugin);
 		}
+		}
+
+		if(getConfig().getBoolean("stafflogin.active")){
+			if(getConfig().getString("stafflogin.discordtoken") != null){
+
+
+			try {
+				jda = new JDABuilder(getConfig().getString("stafflogin.discordtoken")).build();
+			} catch (LoginException e) {
+				e.printStackTrace();
+			}
+			}else{
+				Bukkit.getLogger().severe("Token não encontrado, desativando o plugin!");
+				getPluginLoader().disablePlugin(MainClass.plugin);
+			}
+
 		}
 
 
