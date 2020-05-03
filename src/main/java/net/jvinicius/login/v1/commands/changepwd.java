@@ -31,8 +31,8 @@ public class changepwd implements CommandExecutor {
 
 		}
 		if(Functions.verifyRegister(p)) {
-			if(args[1].length() < 8) {
-				p.sendMessage("§cSua senha deve conter mais de 8 digitos!");
+			if(args[1].length() < 5) {
+				p.sendMessage("§cSua senha deve conter mais de 5 digitos!");
 				return true;
 			}
 			if(Functions.changePassword(p, args[0], args[1])) {

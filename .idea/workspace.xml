@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/loginevents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/loginevents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/jvinicius.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/jvinicius.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +114,7 @@
       <workItem from="1588208084178" duration="1281000" />
       <workItem from="1588290359812" duration="9677000" />
       <workItem from="1588337356993" duration="3642000" />
-      <workItem from="1588454863205" duration="2416000" />
+      <workItem from="1588454863205" duration="3029000" />
     </task>
     <servers />
   </component>
