@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/CaptchaEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/HeadCaptchaType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/ItemCaptchaType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/AccountCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/ChangePwdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/loginevents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/LoginEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/jvinicius.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/SQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -114,7 +127,8 @@
       <workItem from="1588208084178" duration="1281000" />
       <workItem from="1588290359812" duration="9677000" />
       <workItem from="1588337356993" duration="3642000" />
-      <workItem from="1588454863205" duration="3029000" />
+      <workItem from="1588454863205" duration="3138000" />
+      <workItem from="1588468608853" duration="2749000" />
     </task>
     <servers />
   </component>
@@ -126,6 +140,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#Project_Structure/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587294815818" />
+    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1588469920083">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588469920083" />
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588456532942">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -134,26 +152,26 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587375963551" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1588456434307">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1588464288382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1588456434307">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1588464288382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1588456434307">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1588464288382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1588456434307">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1588464288382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588456434307" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588454929070">
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588469047382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588454929070" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588469047382" />
     <state x="209" y="87" key="new project wizard" timestamp="1588175963567">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

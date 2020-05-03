@@ -7,10 +7,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.jvinicius.login.v1.principal.jvinicius;
+import net.jvinicius.login.v1.principal.MainClass;
 import net.jvinicius.login.v1.sql.Functions;
 
-public class account implements CommandExecutor {
+public class AccountCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 	    if (!(sender instanceof Player)) {
@@ -20,7 +20,7 @@ public class account implements CommandExecutor {
 		
 		
 		Player p = (Player)sender;
-		if(!jvinicius.player.contains(p.getName())) {
+		if(!MainClass.player.contains(p.getName())) {
 			p.sendMessage("§cVocê não esta logado!");
 			return true;
 		}

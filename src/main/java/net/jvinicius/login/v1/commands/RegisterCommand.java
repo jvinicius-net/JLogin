@@ -6,10 +6,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.jvinicius.login.v1.principal.jvinicius;
+import net.jvinicius.login.v1.principal.MainClass;
 import net.jvinicius.login.v1.sql.Functions;
 
-public class register implements CommandExecutor {
+public class RegisterCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 	    if (!(sender instanceof Player)) {
@@ -21,13 +21,13 @@ public class register implements CommandExecutor {
 			p.sendMessage("§cVocê já esta registrado!");
 			return true;
 		}
-		if(jvinicius.player.contains(p.getName())) {
+		if(MainClass.player.contains(p.getName())) {
 			p.sendMessage("§cVocê já esta logado!");
 			return true;
 		}
 		
 		
-		if(jvinicius.auth.contains(p.getName()))
+		if(MainClass.auth.contains(p.getName()))
 			if(!Functions.verifyRegister(p)) {
 		
 				if(args.length == 0) {
@@ -67,9 +67,9 @@ public class register implements CommandExecutor {
 						p.sendMessage("§aRegistrado com sucesso!");
 						p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 
-						jvinicius.auth.remove(p.getName());
-						if(!jvinicius.player.contains(p.getName()))
-							jvinicius.player.add(p.getName());
+						MainClass.auth.remove(p.getName());
+						if(!MainClass.player.contains(p.getName()))
+							MainClass.player.add(p.getName());
 					}
 
 				} else if(args.length != 1) {

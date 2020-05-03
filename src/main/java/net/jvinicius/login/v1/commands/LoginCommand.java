@@ -2,16 +2,19 @@ package net.jvinicius.login.v1.commands;
 
 
 
+import net.jvinicius.login.v1.captcha.HeadCaptchaType;
+import net.jvinicius.login.v1.captcha.ItemCaptchaType;
+import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.jvinicius.login.v1.principal.jvinicius;
+import net.jvinicius.login.v1.principal.MainClass;
 import net.jvinicius.login.v1.sql.Functions;
 
-public class login implements CommandExecutor {
+public class LoginCommand implements CommandExecutor {
 
 	@SuppressWarnings("unused")
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -21,13 +24,13 @@ public class login implements CommandExecutor {
 	    }
 		Player p = (Player)sender;
 		
-		if(jvinicius.player.contains(p.getName())) {
+		if(MainClass.player.contains(p.getName())) {
 			p.sendMessage("§cVocê já esta logado!");
 			return true;
 		}
 		
 		
-		if(jvinicius.auth.contains(p.getName()) && Functions.verifyRegister(p))
+		if(MainClass.auth.contains(p.getName()) && Functions.verifyRegister(p))
 			if(args.length == 0) {
 				p.sendMessage("§cUse /login (senha)");
 				return true;
@@ -38,13 +41,23 @@ public class login implements CommandExecutor {
 				}
 				if(Functions.verifyLogin(p, args[0])) {
 
-						jvinicius.auth.remove(p.getName());
+						MainClass.auth.remove(p.getName());
 						p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 
 						p.sendMessage("§aLogado com sucesso!");
+						if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
+						if(MainClass.plugin.getConfig().getInt("captcha.type") == 1) {
+							HeadCaptchaType.sendCaptcha(p);
+						}else if(MainClass.plugin.getConfig().getInt("captcha.type") == 2){
+							ItemCaptchaType.sendCaptcha(p);
+						}else{
+							Bukkit.getLogger().severe("Tipo de captcha não selecionada. Desativando o plugin");
+							MainClass.plugin.getPluginLoader().disablePlugin(MainClass.plugin);
+						}
+						}
 
-						if(!jvinicius.player.contains(p.getName())) {
-							jvinicius.player.add(p.getName());
+						if(!MainClass.player.contains(p.getName())) {
+							MainClass.player.add(p.getName());
 						}
 
 
@@ -52,14 +65,14 @@ public class login implements CommandExecutor {
 
 				} else {
 
-					int tentativas = jvinicius.LIST.get(p);
+					int tentativas = MainClass.LIST.get(p);
 
 
 					if (tentativas > 0) {
 						p.sendMessage("§cA senha que você digitou está incorreta! Você possui mais " + tentativas + " tentantivas.");
 						int antesD = tentativas;
 						tentativas -= 1;
-						jvinicius.LIST.replace(p,antesD,tentativas);
+						MainClass.LIST.replace(p,antesD,tentativas);
 						return true;
 					} else {
 						p.kickPlayer("§cVocê excedeu o limite de tentativas de se autenticar.");

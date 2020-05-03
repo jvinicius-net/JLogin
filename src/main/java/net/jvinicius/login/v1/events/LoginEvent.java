@@ -22,15 +22,15 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import com.google.common.base.Charsets;
 
-import net.jvinicius.login.v1.principal.jvinicius;
+import net.jvinicius.login.v1.principal.MainClass;
 import net.jvinicius.login.v1.sql.Functions;
 
 @SuppressWarnings("deprecation")
-public class loginevents implements Listener {
+public class LoginEvent implements Listener {
 
 	@EventHandler
 	void andar(PlayerMoveEvent e) {
-		if(jvinicius.auth.contains(e.getPlayer().getName())){
+		if(MainClass.auth.contains(e.getPlayer().getName())){
 			e.getPlayer().teleport(e.getPlayer().getLocation());
 		}
 
@@ -39,12 +39,12 @@ public class loginevents implements Listener {
 	@EventHandler
 	void sair(PlayerQuitEvent e) {
 		Functions.updateSair(e.getPlayer());
-		jvinicius.LIST.remove(e.getPlayer());
-		if(jvinicius.player.contains(e.getPlayer().getName())) {
-			jvinicius.player.remove(e.getPlayer().getName());
+		MainClass.LIST.remove(e.getPlayer());
+		if(MainClass.player.contains(e.getPlayer().getName())) {
+			MainClass.player.remove(e.getPlayer().getName());
 		}
-		if(jvinicius.auth.contains(e.getPlayer().getName())) {
-			jvinicius.auth.remove(e.getPlayer().getName());
+		if(MainClass.auth.contains(e.getPlayer().getName())) {
+			MainClass.auth.remove(e.getPlayer().getName());
 		}
 	}
 
@@ -58,11 +58,11 @@ public class loginevents implements Listener {
 		if(!uuidPlayer.equalsIgnoreCase(fetchUUID(e.getPlayer().getName()))) {
 			e.getPlayer().kickPlayer("§4UUID Spoof não é permitido neste servidor!");
 		}
-		jvinicius.auth.add(e.getPlayer().getName());
-		jvinicius.LIST.put(e.getPlayer(), 3);
+		MainClass.auth.add(e.getPlayer().getName());
+		MainClass.LIST.put(e.getPlayer(), 3);
 
 		for(Player p : Bukkit.getOnlinePlayers()) {
-			if(jvinicius.auth.contains(p.getName()) && !jvinicius.player.contains(p.getName())) {
+			if(MainClass.auth.contains(p.getName()) && !MainClass.player.contains(p.getName())) {
 				if(Functions.verifyRegister(p)) {
 					p.sendMessage("§cUse: /login (senha)");
 				} else {
@@ -73,14 +73,14 @@ public class loginevents implements Listener {
 				
 				@Override
 				public void run() {
-					if(jvinicius.auth.contains(p.getName())) {
+					if(MainClass.auth.contains(p.getName())) {
 						p.kickPlayer("§cVocê demorou para se logar/registrar!");
 					}else {
 						this.cancel();
 					}
 					
 				}
-			}.runTaskLater(jvinicius.instance, 20*15);
+			}.runTaskLater(MainClass.instance, 20*15);
 		}
 	}
 
@@ -89,7 +89,7 @@ public class loginevents implements Listener {
 	@EventHandler
 	void falar(AsyncPlayerChatEvent e) {
 
-		if(jvinicius.auth.contains(e.getPlayer().getName())) {
+		if(MainClass.auth.contains(e.getPlayer().getName())) {
 			if(Functions.verifyRegister(e.getPlayer())) {
 				e.getPlayer().sendMessage("§cUse: /login (senha)");
 			} else {
@@ -105,7 +105,7 @@ public class loginevents implements Listener {
 		Player p = e.getPlayer();
 		p.getName().toLowerCase();
 
-		if(jvinicius.auth.contains(p.getName()) && !e.getMessage().toLowerCase().startsWith("/login") && !e.getMessage().toLowerCase().startsWith("/register")){
+		if(MainClass.auth.contains(p.getName()) && !e.getMessage().toLowerCase().startsWith("/login") && !e.getMessage().toLowerCase().startsWith("/register")){
 			e.setCancelled(true);
 		}
 	}
@@ -113,7 +113,7 @@ public class loginevents implements Listener {
 	@EventHandler
 	void interagir(PlayerInteractEvent e) {
 
-		if(jvinicius.auth.contains(e.getPlayer().getName())){
+		if(MainClass.auth.contains(e.getPlayer().getName())){
 			e.setCancelled(true);
 		}
 
@@ -125,7 +125,7 @@ public class loginevents implements Listener {
 	    @SuppressWarnings("unused")
 		Player p = e.getPlayer();
 
-	    if (jvinicius.auth.contains(e.getPlayer().getName())) {
+	    if (MainClass.auth.contains(e.getPlayer().getName())) {
 	      e.setCancelled(true);
 	    }
 	  }
@@ -136,7 +136,7 @@ public class loginevents implements Listener {
 	    @SuppressWarnings("unused")
 		Player p = e.getPlayer();
 
-	    if (jvinicius.auth.contains(e.getPlayer().getName())) {
+	    if (MainClass.auth.contains(e.getPlayer().getName())) {
 	      e.setCancelled(true);
 	    }
 	  }
@@ -147,7 +147,7 @@ public class loginevents implements Listener {
 	    @SuppressWarnings("unused")
 		Player p = e.getPlayer();
 
-	    if (jvinicius.auth.contains(e.getPlayer().getName())) {
+	    if (MainClass.auth.contains(e.getPlayer().getName())) {
 	      e.setCancelled(true);
 	    }
 	  }
@@ -157,7 +157,7 @@ public class loginevents implements Listener {
 		public void noDamage (EntityDamageEvent e) {
 			if (e.getEntity() instanceof Player) {
 				Player p = (Player) e.getEntity();
-				if (jvinicius.auth.contains(p.getName())) {
+				if (MainClass.auth.contains(p.getName())) {
 					e.setCancelled(true);
 				}
 
@@ -168,7 +168,7 @@ public class loginevents implements Listener {
 	  
 	@EventHandler
 	void chat(PlayerChatEvent e) {
-		if(jvinicius.auth.contains(e.getPlayer().getName()))
+		if(MainClass.auth.contains(e.getPlayer().getName()))
 			e.setCancelled(true);
 	}
 }

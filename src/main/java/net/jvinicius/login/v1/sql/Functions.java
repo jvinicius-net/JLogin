@@ -1,7 +1,6 @@
 package net.jvinicius.login.v1.sql;
 
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,19 +9,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-import com.google.common.hash.Hashing;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import net.jvinicius.login.v1.principal.jvinicius;
+import net.jvinicius.login.v1.principal.MainClass;
 
 
 public class Functions {
 	  private static SQL db;
-	  public static jvinicius plugin;
+	  public static MainClass plugin;
 	  
-	  public Functions(jvinicius plugin2){
+	  public Functions(MainClass plugin2){
 		  plugin = plugin2;
 	  }
 	  public static void setSQL()

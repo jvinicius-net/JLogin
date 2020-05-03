@@ -1,7 +1,8 @@
-config:
-   loginstaff: true
-   captcha: true
+captcha:
+  active: true
+  type: 2
+   #Types: 1 = head, 2 = item
 
 
 # Bypass Captcha Permission: jlogin.staff.cbypass
-# Login Staff Permission: jlogin.staff.login
+# Account Command Permission: jlogin.command.account

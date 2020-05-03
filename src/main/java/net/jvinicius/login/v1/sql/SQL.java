@@ -11,7 +11,7 @@ import java.util.logging.Level;
 
 import org.bukkit.plugin.Plugin;
 
-import net.jvinicius.login.v1.principal.jvinicius;
+import net.jvinicius.login.v1.principal.MainClass;
 
 
 
@@ -31,18 +31,18 @@ public class SQL extends Database{
 	  {
     try
 	    {
-			if (!jvinicius.plugin.getDataFolder().exists()) {
-				jvinicius.plugin.getDataFolder().mkdir();
+			if (!MainClass.plugin.getDataFolder().exists()) {
+				MainClass.plugin.getDataFolder().mkdir();
 			}
-		File file = new File(jvinicius.plugin.getDataFolder().getAbsolutePath()+"/users.db");
+		File file = new File(MainClass.plugin.getDataFolder().getAbsolutePath()+"/users.db");
 
 		  if (!file.exists()){
 	            try {
 	            	file.createNewFile();
 	            } catch (IOException e) {
-	            	jvinicius.plugin.getLogger().log(Level.SEVERE, "Não foi possivel criar a db: users.db");
-	            	jvinicius.plugin.getLogger().log(Level.SEVERE, "Desativando plugin!");
-	    			jvinicius.plugin.getPluginLoader().disablePlugin(jvinicius.plugin);
+	            	MainClass.plugin.getLogger().log(Level.SEVERE, "Não foi possivel criar a db: users.db");
+	            	MainClass.plugin.getLogger().log(Level.SEVERE, "Desativando plugin!");
+	    			MainClass.plugin.getPluginLoader().disablePlugin(MainClass.plugin);
 
 	            	
 	            }
@@ -55,15 +55,15 @@ public class SQL extends Database{
 	    }
 	    catch (SQLException e)
 	    {
-	    	jvinicius.plugin.getLogger().log(Level.SEVERE, "Nao foi possivel conectar-se ao servidor SQL, motivo: " + 
+	    	MainClass.plugin.getLogger().log(Level.SEVERE, "Nao foi possivel conectar-se ao servidor SQL, motivo: " +
 	        e.getMessage());
-			jvinicius.plugin.getPluginLoader().disablePlugin(jvinicius.plugin);
+			MainClass.plugin.getPluginLoader().disablePlugin(MainClass.plugin);
 
 	    }
 	    catch (ClassNotFoundException e)
 	    {
-	    	jvinicius.plugin.getLogger().log(Level.SEVERE, "Driver JDBC nao encontrado!");
-			jvinicius.plugin.getPluginLoader().disablePlugin(jvinicius.plugin);
+	    	MainClass.plugin.getLogger().log(Level.SEVERE, "Driver JDBC nao encontrado!");
+			MainClass.plugin.getPluginLoader().disablePlugin(MainClass.plugin);
 
 	    }
     return SQL.connection;
