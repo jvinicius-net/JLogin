@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -22,10 +23,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public final class ItemCaptchaType implements Listener {
+
+
     public static void sendCaptcha(Player p) {
         String nome;
-        List<Integer> lista = Arrays.asList(new Integer[] { Integer.valueOf(261), Integer.valueOf(311), Integer.valueOf(1), Integer.valueOf(138), Integer.valueOf(340), Integer.valueOf(257), Integer.valueOf(268), Integer.valueOf(384), Integer.valueOf(329) });
         Inventory inv;
+        List<Integer> lista = Arrays.asList(new Integer[] { Integer.valueOf(261), Integer.valueOf(311), Integer.valueOf(1), Integer.valueOf(138), Integer.valueOf(340), Integer.valueOf(257), Integer.valueOf(268), Integer.valueOf(384), Integer.valueOf(329) });
+
         if ((inv = Bukkit.createInventory((InventoryHolder)p, 9, "Captcha [" + lista.get((new Random()).nextInt(lista.size())) + "]")).getName().contains("261")) {
             nome = "Arco";
         } else if (inv.getName().contains("311")) {
@@ -55,16 +59,17 @@ public final class ItemCaptchaType implements Listener {
             inv.addItem(new ItemStack[] { item });
         }
         p.openInventory(inv);
-        (new BukkitRunnable() {
+        new BukkitRunnable() {
             public final void run() {
                 if (!MainClass.captchaPlayers.contains(p)) {
                     p.closeInventory();
-                    cancel();
+                    this.cancel();
                 }
-                if (MainClass.captchaPlayers.contains(p) && !p.getOpenInventory().equals(inv))
-                   p.openInventory(inv);
+                if (MainClass.captchaPlayers.contains(p) && !p.getOpenInventory().equals(inv)) {
+                    p.openInventory(inv);
+                }
             }
-        }).runTaskTimer((Plugin) MainClass.plugin, 0L, 35L);
+        }.runTaskTimer((Plugin)MainClass.instance, 0L, 35L);
     }
 
     @EventHandler
@@ -81,6 +86,7 @@ public final class ItemCaptchaType implements Listener {
                     p.kickPlayer("§cVocê errou o captcha!\n§cEntre novamente no servidor!");
                     return;
                 }
+                MainClass.captchaPlayers.remove(p);
                     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
                 p.sendMessage("§aCaptcha verificado com sucesso!");
                 if (MainClass.plugin.getConfig().getBoolean("stafflogin.active")) {
@@ -99,7 +105,6 @@ public final class ItemCaptchaType implements Listener {
                     }
                 }
 
-                MainClass.captchaPlayers.remove(p);
             }
         }
     }

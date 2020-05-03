@@ -8,3 +8,5 @@ commands:
   register:
   changepwd:
   accountcheck:
+  stafflogin:
+  loginstaff:

@@ -8,6 +8,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -16,7 +17,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.UUID;
 
-public class StaffEvent {
+public class StaffEvent implements Listener {
     @EventHandler
     void andar(PlayerMoveEvent e) {
         if(LoginStaff.staffPlayers.containsKey(e.getPlayer())){
@@ -37,7 +38,7 @@ public class StaffEvent {
     @EventHandler
     void falar(AsyncPlayerChatEvent e) {
 
-        if(MainClass.auth.contains(e.getPlayer())) {
+        if(LoginStaff.staffPlayers.containsKey(e.getPlayer())) {
             e.getPlayer().sendMessage("§aVá até seu discord e pegue o codigo!");
             e.setCancelled(true);
         }

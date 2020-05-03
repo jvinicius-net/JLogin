@@ -37,16 +37,20 @@ public final class HeadCaptchaType implements Listener {
         cabecac.setItemMeta((ItemMeta)cabeca2c);
         inv.setItem((new Random()).nextInt(26), cabecac);
         p.openInventory(inv);
-        (new BukkitRunnable() {
+
+        new BukkitRunnable() {
             public final void run() {
                 if (!MainClass.captchaPlayers.contains(p)) {
                     p.closeInventory();
-                    cancel();
+                    this.cancel();
                 }
-                if (MainClass.captchaPlayers.contains(p) && !p.getOpenInventory().equals(inv))
+                if (MainClass.captchaPlayers.contains(p) && !p.getOpenInventory().equals(inv)) {
                     p.openInventory(inv);
+                }
             }
-        }).runTaskTimer((Plugin) MainClass.plugin, 0L, 35L);
+        }.runTaskTimer((Plugin)MainClass.instance, 0L, 35L);
+
+
     }
 
     @EventHandler
@@ -63,6 +67,8 @@ public final class HeadCaptchaType implements Listener {
                 if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§aClique aqui")) {
                     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
                     p.sendMessage("§aCaptcha verificado com sucesso!");
+                    MainClass.captchaPlayers.remove(p);
+
                     if (MainClass.plugin.getConfig().getBoolean("stafflogin.active")) {
 
 
@@ -79,7 +85,6 @@ public final class HeadCaptchaType implements Listener {
                         }
                     }
 
-                    MainClass.captchaPlayers.remove(p);
                 }
             }
         }

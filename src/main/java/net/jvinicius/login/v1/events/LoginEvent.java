@@ -168,7 +168,9 @@ public class LoginEvent implements Listener {
 
 	@EventHandler
 	void chat(PlayerChatEvent e) {
-		if(MainClass.auth.contains(e.getPlayer().getName()))
+		if(MainClass.auth.contains(e.getPlayer().getName())){
 			e.setCancelled(true);
+
+		}
 	}
 }

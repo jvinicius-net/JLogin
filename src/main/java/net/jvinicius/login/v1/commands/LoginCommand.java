@@ -47,6 +47,7 @@ public class LoginCommand implements CommandExecutor {
 
 						p.sendMessage("§aLogado com sucesso!");
 					if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
+						MainClass.captchaPlayers.add(p);
 						if(MainClass.plugin.getConfig().getInt("captcha.type") == 1) {
 							HeadCaptchaType.sendCaptcha(p);
 						}else if(MainClass.plugin.getConfig().getInt("captcha.type") == 2){

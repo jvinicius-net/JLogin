@@ -34,7 +34,7 @@ public class Functions {
 				  statement.executeUpdate("CREATE TABLE IF NOT EXISTS `jvlogin_users` (`username` varchar(32), `password` varchar(32), `ipaddr` varchar(32),`last_seen` varchar(32));");
 
 				  if(MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
-					  statement.executeUpdate("CREATE TABLE IF NOT EXISTS `jvlogin_stafflogin` (`uuid` varchar(32), `discordid` varchar(32));");
+					  statement.executeUpdate("CREATE TABLE IF NOT EXISTS `jvlogin_stafflogin` (`username` varchar(32), `discordid` varchar(32));");
 				  }
 
 				  db.closeConnection();
@@ -428,6 +428,267 @@ public class Functions {
 
 
 
+//
+
+	public static Boolean verifyRegisterStaff(Player p){
+		Boolean status = false;
+		String username = p.getName();
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					username + "';");
+
+			if (rs.next()) {
+				db.closeConnection();
+				status= true;
+			}else {
+				db.closeConnection();
+				status = false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return status;
+	}
+
+	public static Boolean verifyRegisterStaff(OfflinePlayer p){
+		Boolean status = false;
+		String username = p.getName();
+		if (!db.checkConnection()) {
+			db.openConnection();
+
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					username + "';");
+
+			if (rs.next()) {
+				db.closeConnection();
+				status= true;
+			}else {
+				db.closeConnection();
+				status = false;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return status;
+	}
+
+	public static Boolean deletePlayer(OfflinePlayer p){
+		Boolean status = false;
+		String username = p.getName();
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					username + "';");
+
+
+			if(rs.next()){
+				status = true;
+				db.closeConnection();
+			}else{
+				db.closeConnection();
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return status;
+	}
+	public static Boolean deletePlayer(Player p){
+		Boolean status = false;
+		String username = p.getName();
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					username + "';");
+
+
+			if(rs.next()){
+				status = true;
+				db.closeConnection();
+			}else{
+				db.closeConnection();
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return status;
+	}
+
+	public static String getDiscord(Player p){
+		String idDiscord = "";
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					p.getName() + "';");
+
+			if(rs.next()) {
+
+				idDiscord = rs.getString("discordid");
+
+
+
+
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+		db.closeConnection();
+
+		return idDiscord;
+	}
+	public static String getDiscord(OfflinePlayer p){
+		String idDiscord = "";
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+		try {
+			Statement s = db.getConnection().createStatement();
+
+			ResultSet rs;
+
+			rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					p.getName() + "';");
+
+			if(rs.next()) {
+
+				idDiscord = rs.getString("discordid");
+
+
+
+
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+		db.closeConnection();
+
+		return idDiscord;
+	}
+
+	public static boolean registerPlayerStaff(Player p, String id)
+	{
+		String name = p.getName();
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+
+		Statement s;
+		try {
+			s = db.getConnection().createStatement();
+
+
+			ResultSet rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					name + "';");
+			@SuppressWarnings("unused")
+			String retorno = "";
+			if (!rs.next()) {
+				Statement statement = db.getConnection().createStatement();
+
+				statement.executeUpdate("INSERT INTO `jvlogin_stafflogin`(`username`, `discordid`) VALUES ('"+p.getName()+"','"+id+"');");
+				db.closeConnection();
+				return true;
+			}else {
+				db.closeConnection();
+				return false;
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+
+	}
+	public static boolean registerPlayerStaff(OfflinePlayer p, String id)
+	{
+		String name = p.getUniqueId().toString();
+		if (!db.checkConnection()) {
+			db.openConnection();
+		}
+
+		Statement s;
+		try {
+			s = db.getConnection().createStatement();
+
+
+			ResultSet rs = s.executeQuery("SELECT * FROM jvlogin_stafflogin WHERE `username`='" +
+					name + "';");
+			@SuppressWarnings("unused")
+			String retorno = "";
+			if (!rs.next()) {
+				Statement statement = db.getConnection().createStatement();
+
+				statement.executeUpdate("INSERT INTO `jvlogin_stafflogin`(`username`, `discordid`) VALUES ('"+p.getName()+"','"+id+"');");
+				db.closeConnection();
+				return true;
+			}else {
+				db.closeConnection();
+				return false;
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+
+	}
 
 
 

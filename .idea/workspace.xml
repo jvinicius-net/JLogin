@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f40fc27-3815-4896-b195-66f70d5da1b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/LoginStaff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/events/StaffEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JLogin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JLogin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/CaptchaEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/events/CaptchaEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/HeadCaptchaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/HeadCaptchaType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/ItemCaptchaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/events/CaptchaEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/events/CaptchaEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/HeadCaptchaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/HeadCaptchaType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/LoginEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/LoginEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/LoginStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/LoginStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/events/StaffEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/events/StaffEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/principal/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +132,7 @@
       <workItem from="1588454863205" duration="3138000" />
       <workItem from="1588468608853" duration="4713000" />
       <workItem from="1588473499388" duration="4459000" />
-      <workItem from="1588478260462" duration="1216000" />
+      <workItem from="1588478260462" duration="8232000" />
     </task>
     <servers />
   </component>
@@ -157,22 +156,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1587375963551" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1588464288382">
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1588486516780">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1588464288382">
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588486516780" />
+    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1588486516780">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1588464288382">
+    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588486516780" />
+    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1588486516780">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1588464288382">
+    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588486516780" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1588486516780">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588464288382" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1536.834@0.0.1536.834" timestamp="1588486516780" />
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588478259863">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

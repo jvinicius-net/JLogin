@@ -1,6 +1,9 @@
 package net.jvinicius.login.v1.captcha.events;
 
+import net.jvinicius.login.v1.captcha.types.HeadCaptchaType;
+import net.jvinicius.login.v1.captcha.types.ItemCaptchaType;
 import net.jvinicius.login.v1.principal.MainClass;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -8,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.*;
 
 public class CaptchaEvents implements Listener {
@@ -18,7 +22,6 @@ public class CaptchaEvents implements Listener {
         }
 
     }
-
 
 
 

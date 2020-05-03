@@ -16,6 +16,9 @@ import net.jvinicius.login.v1.captcha.events.CaptchaEvents;
 import net.jvinicius.login.v1.captcha.types.HeadCaptchaType;
 import net.jvinicius.login.v1.captcha.types.ItemCaptchaType;
 import net.jvinicius.login.v1.commands.*;
+import net.jvinicius.login.v1.loginstaff.commands.LoginStaffCommand;
+import net.jvinicius.login.v1.loginstaff.commands.LoginStaffConsoleCommand;
+import net.jvinicius.login.v1.loginstaff.events.StaffEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.entity.Player;
@@ -122,9 +125,13 @@ public class MainClass extends JavaPlugin {
 
 		if(getConfig().getBoolean("stafflogin.active")){
 			if(getConfig().getString("stafflogin.discordtoken") != null){
+				getCommand("loginstaff").setExecutor(new LoginStaffCommand());
+				getCommand("stafflogin").setExecutor(new LoginStaffConsoleCommand());
+				Bukkit.getPluginManager().registerEvents(new StaffEvent(), this);
 
 
-			try {
+
+				try {
 				jda = new JDABuilder(getConfig().getString("stafflogin.discordtoken")).build();
 			} catch (LoginException e) {
 				e.printStackTrace();
