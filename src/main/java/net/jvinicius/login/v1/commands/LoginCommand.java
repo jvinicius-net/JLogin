@@ -42,11 +42,13 @@ public class LoginCommand implements CommandExecutor {
 				}
 				if(Functions.verifyLogin(p, args[0])) {
 
-						MainClass.auth.remove(p.getName());
-						p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
+					MainClass.auth.remove(p.getName());
+					MainClass.LIST.remove(p);
+
+					p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 
 						p.sendMessage("§aLogado com sucesso!");
-					if(!p.hasPermission("jlogin.captcha.bypass")){
+
 
 
 						if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
@@ -76,23 +78,6 @@ public class LoginCommand implements CommandExecutor {
 								}
 							}
 						}
-					}else{
-						if(MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
-
-
-							if(p.hasPermission("jlogin.staff.login")){
-								LoginStaff.StaffLogin(p);
-							}else{
-								if(!MainClass.player.contains(p.getName())) {
-									MainClass.player.add(p.getName());
-								}
-							}
-						}else{
-							if(!MainClass.player.contains(p.getName())) {
-								MainClass.player.add(p.getName());
-							}
-						}
-					}
 
 
 					return false;

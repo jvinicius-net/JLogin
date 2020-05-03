@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.HashMap;
 
 
@@ -12,6 +13,9 @@ import com.google.common.io.Resources;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.utils.Compression;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import net.jvinicius.login.v1.captcha.events.CaptchaEvents;
 import net.jvinicius.login.v1.captcha.types.HeadCaptchaType;
 import net.jvinicius.login.v1.captcha.types.ItemCaptchaType;
@@ -46,6 +50,9 @@ public class MainClass extends JavaPlugin {
 	public void onEnable() {
 		for (Player playerc : Bukkit.getOnlinePlayers()) {
 			player.remove(playerc.getName());
+
+			LIST.put(playerc,3);
+
 			auth.add(playerc.getName());
 		}
 		saveDefaultConfig();
@@ -71,6 +78,9 @@ public class MainClass extends JavaPlugin {
 	}
 	public void onDisable() {
 	//	saveConfig();
+		for (Player playerc : Bukkit.getOnlinePlayers()) {
+			LIST.remove(playerc);
+		}
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("JLogin - Plugin Desabilitado");
 		Bukkit.getConsoleSender().sendMessage("");
@@ -86,7 +96,7 @@ public class MainClass extends JavaPlugin {
 		if (!plugin.getDescription().getAuthors().contains("JVinicius")) {
 			pirata = true;
 		}
-		if (!plugin.getDescription().getName().equalsIgnoreCase("JLogin")) {
+		if (!plugin.getDescription().getName().equalsIgnoreCase("JVLogin")) {
 			pirata = true;
 		}
 		if (!plugin.getDescription().getWebsite().equalsIgnoreCase("https://jvinicius.net")) {
@@ -132,7 +142,8 @@ public class MainClass extends JavaPlugin {
 
 
 				try {
-				jda = new JDABuilder(getConfig().getString("stafflogin.discordtoken")).build();
+					jda = new JDABuilder(getConfig().getString("stafflogin.discordtoken")).setActivity(Activity.playing("Protegendo servidores")).setBulkDeleteSplittingEnabled(false).setCompression(Compression.NONE).setDisabledCacheFlags(EnumSet.of(CacheFlag.ACTIVITY, CacheFlag.VOICE_STATE)).disableCache(EnumSet.of(CacheFlag.ACTIVITY, CacheFlag.VOICE_STATE)).build();
+
 			} catch (LoginException e) {
 				e.printStackTrace();
 			}

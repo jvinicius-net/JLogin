@@ -28,6 +28,7 @@ if(!Functions.verifyRegisterStaff(p)){
 p.sendMessage("§aVá até seu discord e pegue a hash!");
         String hashPlayer = Functions.md5hashing(UUID.randomUUID().toString() + p.getName());
         staffPlayers.put(p, hashPlayer);
+
         MainClass.jda.getUserById(Functions.getDiscord(p)).openPrivateChannel().queue((channel) ->
         {
 

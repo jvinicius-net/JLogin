@@ -1,12 +1,16 @@
 captcha:
-  active: true
+  active: false
   type: 2
    #Types: 1 = head, 2 = item
 
 stafflogin:
-  active: true
-  discordtoken: 'NTk0MDE5MzA1NTQ1MjY5MjYw.Xq5aFQ.-D7-_T2J-kbsB_BQbZ27uxSVcLo'
+  active: false
+  discordtoken: 'TOKEN DO BOT'
 
 
 # Bypass Captcha Permission: jlogin.captcha.bypass
 # Account Command Permission: jlogin.command.account
+# Login Staff Command Permission: jlogin.staff.login
+# Staff Login Command Permission: jlogin.command.owner
+
+

@@ -59,8 +59,13 @@ public class LoginStaffConsoleCommand implements CommandExecutor {
         }else{
             if(!MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
                 sender.sendMessage("§cStaffLogin desativado na config!");
+                return true;
             }
            Player p = (Player)sender;
+            if(!p.hasPermission("jlogin.command.owner")){
+                p.sendMessage("§cVocê não tem permissão!");
+                return true;
+            }
 if(args.length > 0){
 if(args[0].equalsIgnoreCase("register")) {
     if (args.length < 2) {

@@ -73,7 +73,6 @@ public class RegisterCommand implements CommandExecutor {
 
 						MainClass.auth.remove(p.getName());
 
-						if(!p.hasPermission("jlogin.captcha.bypass")){
 
 
 							if(MainClass.plugin.getConfig().getBoolean("captcha.active")){
@@ -103,23 +102,7 @@ public class RegisterCommand implements CommandExecutor {
 									}
 								}
 							}
-						}else{
-							if(MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
 
-
-								if(p.hasPermission("jlogin.staff.login")){
-									LoginStaff.StaffLogin(p);
-								}else{
-									if(!MainClass.player.contains(p.getName())) {
-										MainClass.player.add(p.getName());
-									}
-								}
-							}else{
-								if(!MainClass.player.contains(p.getName())) {
-									MainClass.player.add(p.getName());
-								}
-							}
-						}
 
 
 

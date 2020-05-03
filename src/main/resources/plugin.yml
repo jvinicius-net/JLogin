@@ -1,4 +1,4 @@
-name: JLogin
+name: JVLogin
 version: ${project.version}
 main: net.jvinicius.login.v1.principal.MainClass
 author: JVinicius

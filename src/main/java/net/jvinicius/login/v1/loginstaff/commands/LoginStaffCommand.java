@@ -1,12 +1,18 @@
 package net.jvinicius.login.v1.loginstaff.commands;
 
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.jvinicius.login.v1.loginstaff.LoginStaff;
 import net.jvinicius.login.v1.principal.MainClass;
+import net.jvinicius.login.v1.sql.Functions;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class LoginStaffCommand  implements CommandExecutor {
 
@@ -36,7 +42,8 @@ if(args.length == 1){
                 MainClass.player.add(p.getName());
             }
             p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-            p.sendMessage("§aSeja bem vindo!");
+
+                p.sendMessage("§aAutenticado com sucesso!");
             return false;
         }else{
             if(LoginStaff.staffPlayers.containsKey(p)) {
