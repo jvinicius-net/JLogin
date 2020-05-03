@@ -2,7 +2,7 @@ name: JLogin
 version: ${project.version}
 main: net.jvinicius.login.v1.principal.MainClass
 author: JVinicius
-website: http://jvinicius.net
+website: https://jvinicius.net
 commands:
   login:
   register:

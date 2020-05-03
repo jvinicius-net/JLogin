@@ -55,14 +55,51 @@ public class MainClass extends JavaPlugin {
 		registros();
 		plugin = this;
 		instance = this;
-		
+		antPirate();
 		try {Functions.setSQL();} catch (SQLException e) {}
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage("JLogin - Plugin Habilitado");
 
+		Bukkit.getConsoleSender().sendMessage("");
 	}
 	public void onDisable() {
-		saveConfig();
+	//	saveConfig();
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage("JLogin - Plugin Desabilitado");
+		Bukkit.getConsoleSender().sendMessage("");
 	}
-	
+
+
+	public boolean antPirate() {
+		boolean pirata = false;
+
+		if (plugin.getDescription().getAuthors().size() > 1) {
+			pirata = true;
+		}
+		if (!plugin.getDescription().getAuthors().contains("JVinicius")) {
+			pirata = true;
+		}
+		if (!plugin.getDescription().getName().equalsIgnoreCase("JLogin")) {
+			pirata = true;
+		}
+		if (!plugin.getDescription().getWebsite().equalsIgnoreCase("https://jvinicius.net")) {
+			pirata = true;
+		}
+
+		if (pirata == true) {
+			Bukkit.getConsoleSender().sendMessage("");
+			Bukkit.getConsoleSender().sendMessage("JLogin - Plugin Desabilitado");
+			Bukkit.getConsoleSender().sendMessage("Motivo - Modificação indevida detectada no arquivo 'plugin.yml'");
+			Bukkit.getConsoleSender().sendMessage("");
+
+
+			getPluginLoader().disablePlugin(plugin);
+		}
+
+		return pirata;
+	}
+
+
 	void registros() {
 		Bukkit.getPluginManager().registerEvents(new LoginEvent(), this);
 		if(getConfig().getBoolean("captcha.active")){
