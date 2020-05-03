@@ -39,7 +39,7 @@ public class StaffEvent implements Listener {
     void falar(AsyncPlayerChatEvent e) {
 
         if(LoginStaff.staffPlayers.containsKey(e.getPlayer())) {
-            e.getPlayer().sendMessage("Â§aVÃ¡ atÃ© seu discord e pegue o codigo!");
+            e.getPlayer().sendMessage("§aVá até seu discord e pegue o codigo!");
             e.setCancelled(true);
         }
 

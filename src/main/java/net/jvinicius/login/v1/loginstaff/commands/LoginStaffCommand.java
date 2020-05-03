@@ -13,17 +13,17 @@ public class LoginStaffCommand  implements CommandExecutor {
     @SuppressWarnings("unused")
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Â§cApenas players podem executar este comando!");
+            sender.sendMessage("§cApenas players podem executar este comando!");
             return true;
         }
         Player p = (Player)sender;
 
         if(MainClass.player.contains(p.getName())) {
-            p.sendMessage("Â§cVocÃª jÃ¡ esta logado!");
+            p.sendMessage("§cVocê já esta logado!");
             return true;
         }
         if(!p.hasPermission("jlogin.staff.login")){
-            p.sendMessage("Â§cVocÃª nÃ£o tem permissÃ£o a esta comando!");
+            p.sendMessage("§cVocê não tem permissão a esta comando!");
             return true;
         }
 if(args.length == 1){
@@ -36,21 +36,21 @@ if(args.length == 1){
                 MainClass.player.add(p.getName());
             }
             p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-            p.sendMessage("Â§aSeja bem vindo!");
+            p.sendMessage("§aSeja bem vindo!");
             return false;
         }else{
             if(LoginStaff.staffPlayers.containsKey(p)) {
                 LoginStaff.staffPlayers.remove(p);
             }
-            p.kickPlayer("Â§cVocÃª digitou a hash incorreta!");
+            p.kickPlayer("§cVocê digitou a hash incorreta!");
         }
 
     }else{
-        p.kickPlayer("Â§cVocÃª nÃ£o esta na lista de staffs!");
+        p.kickPlayer("§cVocê não esta na lista de staffs!");
     }
 
 }else{
-    p.sendMessage("Â§cUse /loginstaff (hash)");
+    p.sendMessage("§cUse /loginstaff (hash)");
 }
         return true;
     }

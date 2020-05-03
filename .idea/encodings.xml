@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/events/CaptchaEvents.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/HeadCaptchaType.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/captcha/types/ItemCaptchaType.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/AccountCommand.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/ChangePwdCommand.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/LoginCommand.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/RegisterCommand.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/account.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/changepwd.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/login.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/commands/register.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/LoginEvent.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/events/loginevents.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/LoginStaff.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffCommand.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/commands/LoginStaffConsoleCommand.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/loginstaff/events/StaffEvent.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/net/jvinicius/login/v1/sql/SQL.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1252" />

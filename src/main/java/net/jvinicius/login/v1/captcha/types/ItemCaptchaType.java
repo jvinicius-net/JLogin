@@ -54,7 +54,7 @@ public final class ItemCaptchaType implements Listener {
         for (int i = 0; i != 9; i++) {
             ItemStack item;
             ItemMeta item2;
-            (item2 = (item = new ItemStack(Material.getMaterial(((Integer)lista.get(i)).intValue()))).getItemMeta()).setDisplayName("Â§aClique no " + nome);
+            (item2 = (item = new ItemStack(Material.getMaterial(((Integer)lista.get(i)).intValue()))).getItemMeta()).setDisplayName("§aClique no " + nome);
             item.setItemMeta(item2);
             inv.addItem(new ItemStack[] { item });
         }
@@ -83,12 +83,12 @@ public final class ItemCaptchaType implements Listener {
             if (e.getCurrentItem() != null && e.getCurrentItem().hasItemMeta()) {
                 int id = Integer.parseInt(invs.getName().replace("Captcha [", "").replace("]", ""));
                 if (e.getCurrentItem().getTypeId() != id) {
-                    p.kickPlayer("Â§cVocÃª errou o captcha!\nÂ§cEntre novamente no servidor!");
+                    p.kickPlayer("§cVocê errou o captcha!\n§cEntre novamente no servidor!");
                     return;
                 }
                 MainClass.captchaPlayers.remove(p);
                     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-                p.sendMessage("Â§aCaptcha verificado com sucesso!");
+                p.sendMessage("§aCaptcha verificado com sucesso!");
                 if (MainClass.plugin.getConfig().getBoolean("stafflogin.active")) {
 
 

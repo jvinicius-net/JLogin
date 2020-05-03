@@ -16,88 +16,88 @@ public class LoginStaffConsoleCommand implements CommandExecutor {
 
         if (!(sender instanceof Player)) {
             if(!MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
-                Bukkit.getConsoleSender().sendMessage("Â§cStaffLogin desativado na config!");
+                Bukkit.getConsoleSender().sendMessage("§cStaffLogin desativado na config!");
             }
             if(args.length > 0){
                 if(args[0].equalsIgnoreCase("register")){
                     // register USER ID
                     if(args.length < 2){
-                        Bukkit.getConsoleSender().sendMessage("Â§cUse: /stafflogin register (player/uuid) (Discord-ID)");
+                        Bukkit.getConsoleSender().sendMessage("§cUse: /stafflogin register (player/uuid) (Discord-ID)");
                         return true;
                     }
                     if(Functions.registerPlayerStaff(Bukkit.getOfflinePlayer(args[1]),args[2])){
-                        Bukkit.getConsoleSender().sendMessage("Â§aPlayer Registrado com sucesso!");
+                        Bukkit.getConsoleSender().sendMessage("§aPlayer Registrado com sucesso!");
                         return false;
                     }else{
-                        Bukkit.getConsoleSender().sendMessage("Â§cErro interno!");
+                        Bukkit.getConsoleSender().sendMessage("§cErro interno!");
                         return true;
                     }
                 }else if(args[0].equalsIgnoreCase("unregister")){
                     if(args.length < 1){
-                        Bukkit.getConsoleSender().sendMessage("Â§cUse: /stafflogin unregister (player/uuid)");
+                        Bukkit.getConsoleSender().sendMessage("§cUse: /stafflogin unregister (player/uuid)");
                         return true;
                     }
                     if(Functions.deletePlayer(Bukkit.getOfflinePlayer(args[1]))){
-                        Bukkit.getConsoleSender().sendMessage("Â§aRegistro do player removido com sucesso!");
+                        Bukkit.getConsoleSender().sendMessage("§aRegistro do player removido com sucesso!");
                         return false;
                     }else{
-                        Bukkit.getConsoleSender().sendMessage("Â§cErro interno!");
+                        Bukkit.getConsoleSender().sendMessage("§cErro interno!");
                         return true;
                     }
 
                 }else{
-                    Bukkit.getConsoleSender().sendMessage("Â§a/stafflogin register Â§7(Player/UUID) (Discord-ID) Â§e- Â§aRegistre um staff.");
-                    Bukkit.getConsoleSender().sendMessage("Â§a/stafflogin unregister Â§7(Player/UUID) Â§e- Â§a Remova um registro de um staff.");
+                    Bukkit.getConsoleSender().sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+                    Bukkit.getConsoleSender().sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
                     return true;
                 }
 
             }else{
-                Bukkit.getConsoleSender().sendMessage("Â§a/stafflogin register Â§7(Player/UUID) (Discord-ID) Â§e- Â§aRegistre um staff.");
-                Bukkit.getConsoleSender().sendMessage("Â§a/stafflogin unregister Â§7(Player/UUID) Â§e- Â§a Remova um registro de um staff.");
+                Bukkit.getConsoleSender().sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+                Bukkit.getConsoleSender().sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
                 return true;
             }
         }else{
             if(!MainClass.plugin.getConfig().getBoolean("stafflogin.active")){
-                sender.sendMessage("Â§cStaffLogin desativado na config!");
+                sender.sendMessage("§cStaffLogin desativado na config!");
             }
            Player p = (Player)sender;
 if(args.length > 0){
 if(args[0].equalsIgnoreCase("register")) {
     if (args.length < 2) {
-        p.sendMessage("Â§cUse: /stafflogin register (player/uuid) (Discord-ID)");
+        p.sendMessage("§cUse: /stafflogin register (player/uuid) (Discord-ID)");
         return true;
     }
 
 
     if (Functions.registerPlayerStaff(Bukkit.getOfflinePlayer(args[1]), args[2])) {
-        p.sendMessage("Â§aPlayer Registrado com sucesso!");
+        p.sendMessage("§aPlayer Registrado com sucesso!");
         return false;
     } else {
-        p.sendMessage("Â§cErro interno!");
+        p.sendMessage("§cErro interno!");
         return true;
     }
 
 
 }else if(args[0].equalsIgnoreCase("unregister")){
     if (args.length < 2) {
-        p.sendMessage("Â§cUse: /stafflogin register (player/uuid) (Discord-ID)");
+        p.sendMessage("§cUse: /stafflogin register (player/uuid) (Discord-ID)");
         return true;
     }
     if(Functions.deletePlayer(Bukkit.getOfflinePlayer(args[1]))){
-        p.sendMessage("Â§aRegistro do player removido com sucesso!");
+        p.sendMessage("§aRegistro do player removido com sucesso!");
         return false;
     }else{
-        p.sendMessage("Â§cErro interno!");
+        p.sendMessage("§cErro interno!");
         return true;
     }
 }else{
-    p.sendMessage("Â§a/stafflogin register Â§7(Player/UUID) (Discord-ID) Â§e- Â§aRegistre um staff.");
-    p.sendMessage("Â§a/stafflogin unregister Â§7(Player/UUID) Â§e- Â§a Remova um registro de um staff.");
+    p.sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+    p.sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
     return true;
 }
 }else{
-    p.sendMessage("Â§a/stafflogin register Â§7(Player/UUID) (Discord-ID) Â§e- Â§aRegistre um staff.");
-    p.sendMessage("Â§a/stafflogin unregister Â§7(Player/UUID) Â§e- Â§a Remova um registro de um staff.");
+    p.sendMessage("§a/stafflogin register §7(Player/UUID) (Discord-ID) §e- §aRegistre um staff.");
+    p.sendMessage("§a/stafflogin unregister §7(Player/UUID) §e- §a Remova um registro de um staff.");
     return true;
 }
 
